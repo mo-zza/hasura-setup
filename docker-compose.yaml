@@ -6,8 +6,8 @@ services:
         restart: always
         ports:
             - "${HASURA_GRAPHQL_PORT}:8080"
-        depends_on:
-            - "postgres"
+        # depends_on:
+        #     - "postgres"
         environment:
             HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:${PG_PASSWORD}@postgres:${PG_PORT}/${PG_DB_NAME}
             HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
